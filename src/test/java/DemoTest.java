@@ -26,7 +26,7 @@ public class DemoTest {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("automationName", "UIAutomator2");
         caps.setCapability("platformName", "Android");
-        caps.setCapability("platformVersion", "11");
+        caps.setCapability("platformVersion", "10");
         caps.setCapability("deviceName", "Android Emulator");
         caps.setCapability("browserName", "Chrome");
         caps.setCapability("chromedriverExecutable", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
