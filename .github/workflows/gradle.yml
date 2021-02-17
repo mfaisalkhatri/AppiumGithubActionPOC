@@ -15,7 +15,7 @@ jobs:
     runs-on: macos-latest
     strategy: # we are using strategy if we need to run on parallel with different devices and version
      matrix:
-        api-level: [30] #Google api level for example [25,23,28] 
+        api-level: [29] #Google api level for example [25,23,28] 
         target: [default]
     steps:
     - uses: actions/checkout@v2
@@ -32,8 +32,8 @@ jobs:
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
-        arch: x86_64
-        profile: Nexus 6
+        arch: x86
+        profile: Pixel 4
         script: ./gradlew test --info # running our test with info to check the results        
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
