@@ -34,7 +34,7 @@ public class DemoTest {
         // caps.setCapability("browserName", "Chrome");
         // caps.setCapability("chromedriverExecutable", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
         // caps.setCapability("app", System.getProperty("user.dir") + "/src/test/resources/chrome.apk");
-        caps.setCapability("app" , System.getProperty("user.dir")+"src/test/resources/selendroid-test-app-0.17.0.apk");
+        caps.setCapability("app" , System.getProperty("user.dir")+"/src/test/resources/selendroid-test-app-0.17.0.apk");
        // driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"),caps);
         driver = new AndroidDriver<>(server.getUrl(),caps);
     }
