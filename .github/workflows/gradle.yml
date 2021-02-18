@@ -25,7 +25,7 @@ jobs:
         java-version: 15.0.2
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install and Run Appium Server
+    - name: Install Node
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
@@ -34,7 +34,9 @@ jobs:
           chmod +x ./RunAppiumServer.sh # run appium server in the background
           ./RunAppiumServer.sh
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew        
+      run: chmod +x gradlew
+    - name: Grant permission to Chromedriver.exe
+      run: chmod +x ./src/test/resources/chromedriver.exe
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
       with:
