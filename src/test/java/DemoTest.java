@@ -27,7 +27,7 @@ public class DemoTest {
     public void setup () throws MalformedURLException {
         startAppiumServer();
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("automationName", "UIAutomator1");
+        caps.setCapability("automationName", "UIAutomator2");
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "10");
         caps.setCapability("deviceName", "Nexus 6");
