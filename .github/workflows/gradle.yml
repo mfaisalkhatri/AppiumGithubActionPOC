@@ -26,9 +26,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Install and Run Appium Server
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+    - name: Install Appium
+      run: npm install -a appium
+    - name: Execute sh file
       run: |
-        chmod +x ./RunAppiumServer.sh # install and run appium server in the background
-        ./RunAppiumServer.sh
+          chmod +x ./RunAppiumServer.sh # run appium server in the background
+          ./RunAppiumServer.sh
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew        
     - name: Run Appium Tests

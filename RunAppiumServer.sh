@@ -1,6 +1,5 @@
 #!/bin/bash
 set -ex
-npm install -g appium
 appium -v
-where node
 appium &>/dev/null &
+appium -a 127.0.0.1 &
