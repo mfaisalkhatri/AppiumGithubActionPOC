@@ -17,8 +17,8 @@ import static org.testng.Assert.assertEquals;
 public class DemoTest {
 
     private WebDriver driver;
-   private static String appiumServiceUrl;
-   private static AppiumDriverLocalService server;
+    private static String appiumServiceUrl;
+    private static AppiumDriverLocalService server;
 
     @BeforeClass
     public void setup () throws MalformedURLException {
@@ -27,10 +27,10 @@ public class DemoTest {
         caps.setCapability("automationName", "UIAutomator2");
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "10");
-        caps.setCapability("deviceName", "Android Emulator");
+        caps.setCapability("deviceName", "Nexus 6");
         caps.setCapability("browserName", "Chrome");
         caps.setCapability("chromedriverExecutable", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
-        driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),caps);
+        driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"),caps);
         // driver = new AndroidDriver<>(server.getUrl(),caps);
     }
 

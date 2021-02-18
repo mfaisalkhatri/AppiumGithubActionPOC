@@ -29,9 +29,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-    - name: Install Appium
-      run: npm install -g appium
-    - name: Execute sh file
+    - name: Install appium and run appium server
       run: |
           chmod +x ./RunAppiumServer.sh # run appium server in the background
           ./RunAppiumServer.sh
