@@ -1,39 +1,12 @@
-# This workflow will build a Java project with Gradle
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
-
-name: Java CI with Gradle
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+name: Appium CI
+on: [push]
 
 jobs:
-  build:
-
-    runs-on: macos-latest
-    strategy: # we are using strategy if we need to run on parallel with different devices and version
-     matrix:
-        api-level: [29] #Google api level for example [25,23,28] 
-        target: [default]
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 15.0.2
-      uses: actions/setup-java@v1
-      with:
-        java-version: 15.0.2
-    - name: Install and Run Appium Server
-      run: moatazeldebsy/appium-server-gitHub-action@V1.0.4
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew        
-    - name: Run Appium Tests
-      uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
-      with:
-        api-level: ${{ matrix.api-level }}
-        target: ${{ matrix.target }}
-        arch: x86_64
-        profile: Nexus 6
-        script: ./gradlew test --info # running our test with info to check the results        
-    - name: Build with Gradle
-      run: ./gradlew build
+ build:
+  runs-on: ubuntu-latest
+  name: Appium Test
+  steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install and Run Appium Server
+        uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
