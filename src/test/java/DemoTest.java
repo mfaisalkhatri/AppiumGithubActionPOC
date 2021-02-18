@@ -30,6 +30,7 @@ public class DemoTest {
         caps.setCapability("deviceName", "Nexus 6");
         caps.setCapability("browserName", "Chrome");
         caps.setCapability("chromedriverExecutable", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
+        caps.setCapability("app", System.getProperty("user.dir") + "/src/test/resources/chrome.apk");
        // driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"),caps);
         driver = new AndroidDriver<>(server.getUrl(),caps);
     }
