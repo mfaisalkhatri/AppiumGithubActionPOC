@@ -30,7 +30,7 @@ jobs:
       with:
         node-version: '14.x'
     - name: Install Appium
-      run: npm install -a appium
+      run: npm install -g appium
     - name: Execute sh file
       run: |
           chmod +x ./RunAppiumServer.sh # run appium server in the background
