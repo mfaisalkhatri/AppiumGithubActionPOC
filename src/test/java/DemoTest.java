@@ -27,10 +27,10 @@ public class DemoTest {
     public void setup () throws MalformedURLException {
         startAppiumServer();
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("automationName", "Appium");
+        caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "10");
-        caps.setCapability("deviceName", "Nexus 6");
+        caps.setCapability("deviceName", "emulator-5555");
         caps.setCapability("browserName", "Chrome");
         caps.setCapability("chromedriverExecutable", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
         caps.setCapability("app", System.getProperty("user.dir") + "/src/test/resources/chrome.apk");
