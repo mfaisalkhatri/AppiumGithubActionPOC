@@ -22,7 +22,7 @@ public class DemoTest {
 
     @BeforeClass
     public void setup () throws MalformedURLException {
-        startAppiumServer();
+        //startAppiumServer();
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("automationName", "UIAutomator2");
         caps.setCapability("platformName", "Android");
@@ -53,6 +53,6 @@ public class DemoTest {
     @AfterClass(alwaysRun = true)
     public void tearDown () {
         driver.quit();
-        server.stop();
+       // server.stop();
     }
 }
